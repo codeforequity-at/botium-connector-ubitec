@@ -1,0 +1,11 @@
+{
+  "botium": {
+    "Capabilities": {
+      "PROJECTNAME": "Botium Project Ubitec",
+      "CONTAINERMODE": "ubitec",
+      "UBITEC_URL": "https://public.test.botium.ubitec.bot",
+      "UBITEC_USER": "",
+      "UBITEC_PASSWORD": ""
+    }               
+  }
+}
