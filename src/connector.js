@@ -40,19 +40,23 @@ class BotiumConnectorUbitec {
       }
 
       this.delegateCaps = {
-        [CoreCapabilities.SIMPLEREST_URL]: `${baseUrl}chat/http/`,
+        [CoreCapabilities.SIMPLEREST_URL]: `${baseUrl}admin/ws/botium/`,
         [CoreCapabilities.SIMPLEREST_METHOD]: 'POST',
         [CoreCapabilities.SIMPLEREST_HEADERS_TEMPLATE]: headers,
         [CoreCapabilities.SIMPLEREST_BODY_TEMPLATE]: `{
-          "type": "text",
-          "data": {
-            "text": "{{msg.messageText}}"
-          }
+          "text": "{{msg.messageText}}"
         }`,
+        [CoreCapabilities.SIMPLEREST_REQUEST_HOOK]: ({ requestOptions, msg }) => {
+          if (msg.header) {
+            requestOptions.headers['User-ID'] = Buffer.from(msg.header.projectname).toString('base64')
+            requestOptions.headers['User-Label'] = Buffer.from(msg.header.projectname).toString('base64')
+          }
+        },
         [CoreCapabilities.SIMPLEREST_CONTEXT_JSONPATH]: '$',
-        [CoreCapabilities.SIMPLEREST_RESPONSE_JSONPATH]: ['$.responses[*].data.text'],
-        [CoreCapabilities.SIMPLEREST_RESPONSE_HOOK]: ({ botMsg }) => {
-          debug(`Response Body: ${JSON.stringify(botMsg.sourceData)}`)
+        [CoreCapabilities.SIMPLEREST_BODY_JSONPATH]: '$.messages[*]',
+        [CoreCapabilities.SIMPLEREST_RESPONSE_JSONPATH]: '$.messageText',
+        [CoreCapabilities.SIMPLEREST_RESPONSE_HOOK]: ({ botMsg, botMsgRoot }) => {
+          Object.assign(botMsg, botMsgRoot)
         }
       }
       for (const capKey of Object.keys(this.caps).filter(c => c.startsWith('SIMPLEREST'))) {

@@ -1,9 +1,9 @@
 {
   "botium": {
     "Capabilities": {
-      "PROJECTNAME": "Botium Project Ubitec",
+      "PROJECTNAME": "Botium Project Ubitec (wer ist florian)",
       "CONTAINERMODE": "ubitec",
-      "UBITEC_URL": "https://public.test.botium.ubitec.bot",
+      "UBITEC_URL": "https://test.botium.ubitec.bot",
       "UBITEC_USER": "",
       "UBITEC_PASSWORD": ""
     }               

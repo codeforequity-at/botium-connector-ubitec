@@ -6,6 +6,14 @@ module.exports = {
   PluginDesc: {
     name: 'Botium Connector for Ubitec',
     provider: 'Ubitec',
+    features: {
+      intentResolution: true,
+      intentConfidenceScore: true,
+      alternateIntents: true,
+      entityResolution: true,
+      entityConfidenceScore: true,
+      testCaseGeneration: false
+    },
     capabilities: [
       {
         name: 'UBITEC_URL',
