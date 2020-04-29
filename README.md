@@ -2,11 +2,12 @@
 
 [![NPM](https://nodei.co/npm/botium-connector-ubitec.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/botium-connector-ubitec/)
 
+[![Codeship Status for codeforequity-at/botium-connector-ubitec](https://app.codeship.com/projects/69e80810-6c83-0138-fc87-523c19412751/status?branch=master)](https://app.codeship.com/projects/394685)
 [![npm version](https://badge.fury.io/js/botium-connector-ubitec.svg)](https://badge.fury.io/js/botium-connector-ubitec)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)]()
 
 
-This is a [Botium](https://github.com/codeforequity-at/botium-core) connector for testing your Ubitec chatbot.
+This is a [Botium](https://www.botium.ai) connector for testing your Ubitec chatbot.
 
 __Did you read the [Botium in a Nutshell](https://medium.com/@floriantreml/botium-in-a-nutshell-part-1-overview-f8d0ceaf8fb4) articles? Be warned, without prior knowledge of Botium you won't be able to properly use this library!__
 
@@ -16,7 +17,7 @@ Botium connects to the API of your Ubitec chatbot.
 It can be used as any other Botium connector with all Botium Stack components:
 * [Botium CLI](https://github.com/codeforequity-at/botium-cli/)
 * [Botium Bindings](https://github.com/codeforequity-at/botium-bindings/)
-* [Botium Box](https://www.botium.at)
+* [Botium Box](https://www.botium.ai)
 
 ## Requirements
 * **Node.js and NPM**
