@@ -1,6 +1,6 @@
 {
   "name": "botium-connector-ubitec",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Botium Connector for Ubitec",
   "main": "dist/botium-connector-ubitec-cjs.js",
   "module": "dist/botium-connector-ubitec-es.js",
