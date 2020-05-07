@@ -4,7 +4,7 @@ module.exports = {
   PluginVersion: 1,
   PluginClass: BotiumConnectorUbitec,
   PluginDesc: {
-    name: 'Botium Connector for Ubitec',
+    name: 'Ubitec Bot Framework',
     provider: 'Ubitec',
     features: {
       intentResolution: true,
@@ -17,22 +17,22 @@ module.exports = {
     capabilities: [
       {
         name: 'UBITEC_URL',
-        label: 'Ubitec Endpoint',
-        description: 'Ubitec endpoint url',
+        label: 'Consumer Endpoint',
+        description: 'Path of the Botium Consumer endpoint.',
         type: 'url',
         required: true
       },
       {
         name: 'UBITEC USER',
-        label: 'Ubitec User',
-        description: 'Ubitec user',
+        label: 'Username',
+        description: 'Username for Basic Authentication.',
         type: 'string',
         required: true
       },
       {
         name: 'UBITEC_PASSWORD',
-        label: 'Ubitec Password',
-        description: 'Ubitec password',
+        label: 'Password',
+        description: 'Password for Basic Authentication.',
         type: 'string',
         required: true
       }
