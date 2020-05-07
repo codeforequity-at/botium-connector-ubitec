@@ -1,7 +1,7 @@
 {
   "botium": {
     "Capabilities": {
-      "PROJECTNAME": "",
+      "PROJECTNAME": "Ubitec Test",
       "CONTAINERMODE": "ubitec",
       "UBITEC_URL": "",
       "UBITEC_USER": "",

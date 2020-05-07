@@ -1,10 +1,15 @@
+const fs = require('fs')
+const path = require('path')
 const BotiumConnectorUbitec = require('./src/connector')
+
+const logo = fs.readFileSync(path.join(__dirname, 'logo.png')).toString('base64')
 
 module.exports = {
   PluginVersion: 1,
   PluginClass: BotiumConnectorUbitec,
   PluginDesc: {
     name: 'Ubitec Bot Framework',
+    avatar: logo,
     provider: 'Ubitec',
     features: {
       intentResolution: true,
