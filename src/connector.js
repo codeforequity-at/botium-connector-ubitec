@@ -28,9 +28,9 @@ class BotiumConnectorUbitec {
 
     if (!this.caps[Capabilities.UBITEC_URL]) throw new Error('UBITEC_URL capability required')
     if (!this.delegateContainer) {
-      let baseUrl = this.caps[Capabilities.UBITEC_URL]
-      if (!baseUrl.endsWith('/')) {
-        baseUrl = baseUrl + '/'
+      let endpointUrl = this.caps[Capabilities.UBITEC_URL]
+      if (!endpointUrl.endsWith('/')) {
+        endpointUrl = endpointUrl + '/'
       }
 
       const headers = {}
@@ -40,7 +40,7 @@ class BotiumConnectorUbitec {
       }
 
       this.delegateCaps = {
-        [CoreCapabilities.SIMPLEREST_URL]: `${baseUrl}admin/ws/botium/`,
+        [CoreCapabilities.SIMPLEREST_URL]: `${endpointUrl}`,
         [CoreCapabilities.SIMPLEREST_METHOD]: 'POST',
         [CoreCapabilities.SIMPLEREST_HEADERS_TEMPLATE]: headers,
         [CoreCapabilities.SIMPLEREST_BODY_TEMPLATE]: `{
