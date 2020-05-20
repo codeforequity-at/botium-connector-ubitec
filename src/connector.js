@@ -47,9 +47,20 @@ class BotiumConnectorUbitec {
           "text": "{{msg.messageText}}"
         }`,
         [CoreCapabilities.SIMPLEREST_REQUEST_HOOK]: ({ requestOptions, msg }) => {
-          if (msg.header) {
-            requestOptions.headers['User-ID'] = Buffer.from(msg.header.projectname).toString('base64')
-            requestOptions.headers['User-Label'] = Buffer.from(msg.header.projectname).toString('base64')
+          requestOptions.headers['User-ID'] = Buffer.from('Botium').toString('base64')
+          requestOptions.headers['User-Label'] = Buffer.from('Botium').toString('base64')
+          if (msg.header && msg.header.projectname) {
+            requestOptions.headers['Botium-Project'] = `${msg.header.projectname}`
+          }
+          if (msg.header && msg.header.testsessionname) {
+            requestOptions.headers['Botium-TestSession'] = `${msg.header.testsessionname}`
+          }
+          if (msg.header && msg.header.name) {
+            requestOptions.headers['Botium-TestCase'] = `${msg.header.name}`
+          }
+          if (msg.conversation) {
+            const currentStep = msg.conversation[msg.currentStepIndex]
+            requestOptions.headers['Botium-TestStep'] = `${currentStep.stepTag}`
           }
         },
         [CoreCapabilities.SIMPLEREST_CONTEXT_JSONPATH]: '$',
